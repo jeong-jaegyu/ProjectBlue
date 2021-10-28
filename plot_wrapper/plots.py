@@ -1,22 +1,26 @@
 from __future__ import annotations
-
 from typing import Union
+import multiprocessing
 
 import matplotlib
-
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
 class Plot:
     # init
-    def __init__(self, labelx="x-values", labely="y-values"):
+    def __init__(self, labelx="x-values", labely="y-values", is_multproc=False):
+        # private vars
         self.plot_labelx = labelx
         self.plot_labely = labely
-
-        # private vars
         self.array_plotx = []
         self.array_ploty = []
+
+        # This is used solely to display multiple graphs. Make a function for each graph definition and call it with
+        # multiprocessing to increase speed.
+        if is_multproc:
+            self.is_multproc = True
+            self.multproc = multiprocessing.Process(target=self.disp_plot)
 
     # methods
     def disp_plot(self):
