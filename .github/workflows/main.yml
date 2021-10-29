@@ -16,7 +16,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: run main
           source /venv/bin/activate
           python3 -o ./github/workflows/test/*.py
@@ -30,8 +29,10 @@ jobs:
         run: |
           /venv/bin/activate.bat
           python3 -o .github/workflows/test/*.py
-      - name: ps1-run
+
         if: ${{ failure() }}
+      - uses: actions/checkout@v2
+      - name: ps1-run
         run: |
           /venv/bin/activate.ps1
           python3 -o .github/workflows/test/*.py
