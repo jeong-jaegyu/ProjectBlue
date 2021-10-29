@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name:
+      - name: bash-run
         run: |
           source venv/bin/activate
           python3 -o .github/workflows/test/*.py
