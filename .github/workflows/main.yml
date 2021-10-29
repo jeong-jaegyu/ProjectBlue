@@ -13,16 +13,14 @@ on:
 jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: run main
           source /venv/bin/activate
-          python3 -o ./github/workflows/test/*.py
+          python3 -o /.github/workflows/test/*.py
 
   build-windows:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: bat-run
