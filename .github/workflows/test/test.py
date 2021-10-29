@@ -1,7 +1,7 @@
 
-import venv.lib.python39.sitepackages.matplotlib
+import matplotlib
 matplotlib.use('TkAgg')
-import venv.lib.python39.sitepackages.matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 import plot_wrapper.plots as plots
 
