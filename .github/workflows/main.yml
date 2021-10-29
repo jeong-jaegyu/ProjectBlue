@@ -28,12 +28,12 @@ jobs:
       - name: bat-run
         run: |
           /venv/bin/activate.bat
-          python3 -o .github/workflows/test/*.py
+          python3 -o /.github/workflows/test/*.py
 
         if: ${{ failure() }}
       - uses: actions/checkout@v2
       - name: ps1-run
         run: |
           /venv/bin/activate.ps1
-          python3 -o .github/workflows/test/*.py
+          python3 -o /.github/workflows/test/*.py
 
