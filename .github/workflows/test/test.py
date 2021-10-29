@@ -19,3 +19,6 @@ if __name__ == '__main__':
 
     red.multproc.start()
     blue.multproc.start()
+
+    red.multproc.terminate()
+    blue.multproc.terminate()
