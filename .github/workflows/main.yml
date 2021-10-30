@@ -16,8 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: bash-run
+      -allow-failure: True
         run: |
-          pip3 install tk
+          pip3 install tkinter
           pip3 install matplotlib
           python3 -O test.py
 
