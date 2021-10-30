@@ -14,8 +14,8 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     steps:
+      - continue-on-error: true
       - name: bash-run
-      continue-on-error: true
       - uses: actions/checkout@v2
         run: |
           pip3 install tkinter
