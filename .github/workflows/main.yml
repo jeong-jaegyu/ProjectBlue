@@ -26,15 +26,17 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: bat-run
+      - name: ps1-run
         run: |
           pip3 install matplotlib
           python3 -O test.py
 
         if: ${{ failure() }}
       - uses: actions/checkout@v2
-      - name: ps1-run
+      - name: bat-run
         run: |
           pip3 install matplotlib
           python3 -O test.py
+
+
 
