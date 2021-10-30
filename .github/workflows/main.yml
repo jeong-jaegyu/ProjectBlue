@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: run_main
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: bash-run
+        run: |
+          pip3 install tkinter
+          pip3 install matplotlib
+          python3 -O test.py
+        continue-on-error: true
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: ps1-run
+        run: |
+          pip3 install matplotlib
+          python3 -O test.py
+
+        if: ${{ failure() }}
+      - uses: actions/checkout@v2
+      - name: bat-run
+        run: |
+          pip3 install matplotlib
+          python3 -O test.py
+
+
+
