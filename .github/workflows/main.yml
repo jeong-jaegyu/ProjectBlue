@@ -13,10 +13,10 @@ on:
 jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
+    allow-failure: true
     steps:
       - uses: actions/checkout@v2
       - name: bash-run
-      -allow-failure: True
         run: |
           pip3 install tkinter
           pip3 install matplotlib
