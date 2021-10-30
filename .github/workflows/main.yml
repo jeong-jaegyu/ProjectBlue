@@ -17,8 +17,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: bash-run
         run: |
+          pip3 install tk
           pip3 install matplotlib
-          python3 -O .github/workflows/test/test.py
+          python3 -O test.py
 
   build-windows:
     runs-on: windows-latest
@@ -27,12 +28,12 @@ jobs:
       - name: bat-run
         run: |
           pip3 install matplotlib
-          python3 -O .github/workflows/test/test.py
+          python3 -O test.py
 
         if: ${{ failure() }}
       - uses: actions/checkout@v2
       - name: ps1-run
         run: |
           pip3 install matplotlib
-          python3 -O .github/workflows/test/test.py
+          python3 -O test.py
 
