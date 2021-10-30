@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: bash-run
-        continue-on-error: true
       - uses: actions/checkout@v2
         run: |
           pip3 install tkinter
           pip3 install matplotlib
           python3 -O test.py
+        continue-on-error: true
 
   build-windows:
     runs-on: windows-latest
