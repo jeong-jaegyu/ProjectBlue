@@ -14,9 +14,9 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: bash-run
-      - continue-on-error: true
+      - uses: actions/checkout@v2
+      continue-on-error: true
         run: |
           pip3 install tkinter
           pip3 install matplotlib
